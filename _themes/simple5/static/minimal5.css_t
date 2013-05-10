@@ -48,6 +48,7 @@ a.readmore {
 #email:hover { color: #c1150c; }
 #pgp { color: #00932a; }
 #pgp:hover { color: #00c638; }
+#mug { padding: 5px 0;}
 
 span.pre {
     font-family: monospace;
@@ -222,15 +223,6 @@ footer {
     text-align: center;
     font-size: 80%;
     color: #999;
-}
-
-/* Retina displays ========================================================= */
-@media screen and (-webkit-min-device-pixel-ratio: 2)
-{
-    /* Body ---------------------------------------------------------------- */
-    body {
-        font-size: 200%;
-    }
 }
 
 @media only screen and (min-width: 480px) {
