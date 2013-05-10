@@ -1,0 +1,40 @@
+{#
+    minimal/layout.html
+    ~~~~~~~~~~~~~~~~~~~
+
+    Layout for Minimal5 theme.
+
+    :copyright: Copyright 2011-2013 by Vlad Riscutia and contributors (see
+    CONTRIBUTORS file)
+    :license: FreeBSD, see LICENSE file
+#}
+
+{% extends "boilerplate/layout.html" %}
+
+{%- block header -%}
+{# Move navigation above the header #}
+  <nav>
+    <ul>
+      {%- block quicklinks -%}
+      {%- endblock -%}
+      {% for page in pages -%}
+        <li class="main-nav">
+          <a href="{{ pathto(page[0]) }}">{{ page[1]|e }}</a>
+        </li>
+      {% endfor -%}
+    </ul>
+  </nav>
+
+  {{ super() }}
+{%- endblock -%}
+
+{%- block navigation -%}
+{%- endblock -%}
+
+{%- block footer -%}
+<footer class="wrapper">
+{%- if show_copyright -%}
+  {% trans copyright=copyright|e -%}&copy; Copyright {{ copyright }}. {% endtrans -%}
+{%- endif -%}
+</footer>
+{%- endblock -%}
