@@ -1,0 +1,3 @@
+#!/bin/bash
+
+tinker -b && rsync -a blog/html/ /var/www/pub/
