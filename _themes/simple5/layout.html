@@ -11,24 +11,15 @@
 
 {% extends "myboilerplate/layout.html" %}
 
-{%- block header -%}
-{# Move navigation above the header #}
+{%- block navigation -%}
   <nav>
     <ul>
       {%- block quicklinks -%}
       {%- endblock -%}
-      {% for page in pages -%}
-        <li class="main-nav">
-          <a href="{{ pathto(page[0]) }}">{{ page[1]|e }}</a>
-        </li>
-      {% endfor -%}
+      {# hardcode top nav #}
+      <li class="main-nav"><a href="#">home</a></li>
     </ul>
   </nav>
-
-  {{ super() }}
-{%- endblock -%}
-
-{%- block navigation -%}
 {%- endblock -%}
 
 {%- block footer -%}
