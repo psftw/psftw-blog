@@ -14,7 +14,7 @@
   <h3>categories</h3>
     <ul>
       {%- for category, count in categories|dictsort -%}
-        {%- if category != "{{ categories }}" -%}
+        {%- if category != "{{ categories }}" and count != 0-%}
         <li><a href="{{ pathto('categories/' + catlinks[category]) }}">{{ category }}</a> ({{ count }})</li>
         {%- endif -%}
       {%- endfor -%}
