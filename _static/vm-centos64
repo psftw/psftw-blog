@@ -1,0 +1,16 @@
+#!/bin/bash
+
+LOGFILE="$HOME/logs/centos64base.log"
+
+DRIVE="-drive file=/mnt/120G-MLC/images/centos64base.img,cache=none,aio=native"
+CDROM="-boot d -cdrom /mnt/1tera/images/CentOS-6.4-x86_64-minimal.iso"
+NET="-net user,hostfwd=tcp:127.0.0.1:5022-:22 -net nic,macaddr=12:34:83:a5:13:16"
+
+SMP=4
+MEM=4096
+
+# maintenance
+nohup kvm -smp $SMP -m $MEM -vga std $DRIVE $CDROM $NET > $LOGFILE 2>&1 &
+
+# daemon
+#nohup kvm -smp $SMP -m $MEM -nographic -serial none $DRIVE $NET > $LOGFILE 2>&1 &
