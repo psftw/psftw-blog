@@ -1,4 +1,4 @@
 #!/bin/bash
 
-docker run -it -u $(id -u) -v $(pwd):/blog psftw/tinker $@
+docker run -it -u $(id -u) -v $(pwd):/blog psftw/tinkerer $@
 
