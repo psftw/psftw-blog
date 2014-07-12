@@ -78,13 +78,13 @@
     {%- if prev or next -%}
         <ul class="related clearfix">
             <li class="left">
-            {%- if prev -%}
-                {{ prevchar }}<a href="{{ prev.link|e }}">{{ prev.title }}</a>
+            {%- if next -%}
+                {{ prevchar }}<a href="{{ next.link|e }}">{{ next.title }}</a>
             {%- endif -%}
             </li>
             <li class="right">
-            {%- if next -%}
-                <a href="{{ next.link|e }}">{{ next.title }}</a>{{ nextchar }}
+            {%- if prev -%}
+                <a href="{{ prev.link|e }}">{{ prev.title }}</a>{{ nextchar }}
             {%- endif -%}
             </li>
         </ul>
@@ -246,6 +246,9 @@
       {%- block header -%}
       {%- endblock -%}
 
+      <div class="header-container">
+        <img src="/psftw_banner.jpg" style="max-width:100%; padding-bottom: 15px;"/>
+      </div>
           <div class="main-container">
       {%- block content -%}
             <div class="main wrapper clearfix">
@@ -256,17 +259,6 @@
                     {%- block relbar2 -%}{{ relbar() }}{% endblock -%}
                   </article>
             {%- endblock -%}
-            {%- if render_sidebar -%}
-              <aside class="sidebar">
-                {%- if sidebars != None -%}
-                  {%- for sidebartemplate in sidebars -%}
-                  <section>
-                    {%- include sidebartemplate -%}
-                  </section>
-                  {%- endfor -%}
-                {%- endif -%}
-              </aside>
-            {%- endif -%}
             </div> <!-- #main -->
       {%- endblock -%}
           </div> <!-- #main-container -->
@@ -275,7 +267,7 @@
       {%- block footer -%}
           <footer class="wrapper">
           {%- if show_copyright -%}
-            {% trans copyright=copyright|e -%}&copy; Copyright {{ copyright }}. {% endtrans -%}
+            {% trans copyright=copyright|e -%}&copy; {{ copyright }}. {% endtrans -%}
           {%- endif -%}
           {%- if show_sphinx -%}
           powered by <a href="http://www.python.org/">python</a>, <a href="http://www.tinkerer.me/">tinkerer</a> and <a href="http://sphinx.pocoo.org/">sphinx</a>

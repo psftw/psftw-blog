@@ -1,3 +1,0 @@
-#!/bin/bash
-
-tinker --preview drafts/*.rst && rsync -a --delete blog/html/ /var/www/pub/

@@ -18,7 +18,7 @@ description = ''
 author = 'Peter Salvatore'
 
 # Change this to your copyright string
-copyright = '2013, ' + author         
+copyright = '2013-14 ' + author
 
 # Change this to your blog root URL (required for RSS feed)
 website = 'https://psftw.com/'
@@ -70,6 +70,7 @@ html_sidebars = {
     "**": ["about.html", "recent.html", "categories.html", "side-archive.html"]
 }
 
+render_sidebar = False
 # **************************************************************
 # Do not modify below lines as the values are required by 
 # Tinkerer to play nice with Sphinx

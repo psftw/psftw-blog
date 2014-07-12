@@ -17,23 +17,20 @@
       {%- block quicklinks -%}
       {%- endblock -%}
       {# hardcode top nav #}
-      <li class="main-nav"><a href="/">home</a></li>
+      <li class="main-nav"><a href="/">psftw.com</a></li>
+      <li class="main-nav"><a href="/archive.html">archive</a></li>
+      <li class="main-nav"><a href="/pages/hi2u.html">hi2u</a></li>
     </ul>
   </nav>
 {%- endblock -%}
 
 {%- block header -%}
-<header>
-  <hgroup>
-    <h1>*_* psftw *_*</h1>
-  </hgroup>
-</header>
 {%- endblock -%}
 
 {%- block footer -%}
 <footer class="wrapper">
 {%- if show_copyright -%}
-  {% trans copyright=copyright|e -%}&copy; Copyright {{ copyright }}. {% endtrans -%}
+  {% trans copyright=copyright|e -%}&copy; {{ copyright }} {% endtrans -%}
 {%- endif -%}
 </footer>
 {%- endblock -%}

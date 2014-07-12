@@ -19,6 +19,7 @@ body {
 
 blockquote {
     background-color: #f0f0f0;
+    font-size: 1.0em;
     padding: 20px;
 }
 
@@ -29,6 +30,11 @@ a:link, a:visited, a:active {
 
 a:hover {
     color: #cccccc;
+}
+
+h1 {
+    font-size: 1.4em;
+    padding-top: 0px;
 }
 
 h1 a:link, h1 a:visited, h1 a:active, h1 a:hover {
@@ -62,41 +68,43 @@ header {
 }
 
 header h1 {
-    font-size: 180%;
+    font-size: 1.4em;
     margin: 12px;
 }
 
 header h2 {
-    font-size: 120%;
+    font-size: 1.3em;
     font-style: italic;
     margin: 0px;
 }
 
 /* Page navigation */
 nav {
-    background-color: black;
-    font-size: 125%;
+    background-color: #999;
+    font-size: 1.2em;
     font-weight: bold;
-    height: 2em;
-    line-height: 2em;
-    width: 100%;
-    top: 0;
+    width: auto;
+    top: 0px;
 }
 
-nav a:link, nav a:visited, nav a:active, nav a:hover {
-    color: white;
+nav a:link, nav a:visited, nav a:active {
+    color: #fff;
+}
+
+nav a:hover {
+    color: #222;
 }
 
 nav ul, nav ol {
     line-style: none;
     list-style-image: none; 
     margin: 0;
-    padding: 0 24px;
+    padding: 1%;
 }
 
 nav li {
     display: inline;
-    padding: 0 24px;
+    padding-right: 2em;
     text-align: center;
     width: 100%;
 }
@@ -111,22 +119,51 @@ div.admonition {
 }
 
 /* Body */
-h1 {
-    margin-top: 0;
-}
-
 ul.related li { 
     list-style-type: none; 
     text-align: center;
 }
 
 article {
-    margin: 0 40px;
+    margin: 0;
     border-bottom: 2px solid #999;
+    font-size: 1.2em;
 }
 
-article li { 
-    line-height: 1.5em; 
+article img {
+   display: block;
+   max-width: 100%;
+   height: auto;
+   margin-left: auto;
+   margin-right: auto;
+   padding-bottom: 15px;
+}
+
+li { 
+    font-size: 1.1em;
+}
+
+p {
+    font-size: 1.2em;
+}
+
+pre {
+    font-size: 1.0em;
+    font-weight: 500;
+    line-height: 1.1em;
+    // white-space: pre;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+::-webkit-scrollbar {
+    width: 5px;
+}
+::-webkit-scrollbar-thumb {
+    background-color: #999;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #ddd;
 }
 
 /* Sidebar */
@@ -146,8 +183,9 @@ div.social {
 
 /* Meta */
 div.postmeta {
-    margin-top: 40px;
+//    margin-top: 40px;
     font-style: italic;
+    font-size: 0.8em;
 }
 
 div.timestamp {
@@ -162,7 +200,7 @@ span.title_tag, span.title_category {
     font-style: italic;
 }
 
-div.year h1 {
+div.year h2 {
     float: left;
     margin-right: -100%;
     margin-top: 20px;
@@ -175,14 +213,14 @@ div.year ul {
 }
 
 div.year div.postmeta {
-    margin-left: 50%;
-    margin-top: 12px;
+    margin-left: 2em;
+//    margin-top: 12px;
 }
 
 div.year div.timestamp {
     float: left;
     line-height: 1.5em;
-    margin-left: 27%;
+    margin-left: 1em;
     margin-top: 0;
     font-style: normal;
     font-weight: bold;
@@ -190,7 +228,7 @@ div.year div.timestamp {
 
 div.year h2 {
     margin-bottom: 0;
-    margin-left: 50%;
+    margin-left: 2em;
     margin-top: 0;
 }
 
@@ -218,31 +256,26 @@ div.archive_link {
 
 /* Footer */
 footer {
-    border-top: 1px dashed #999;
     margin-top: 40px;
-    text-align: center;
+    text-align: right;
     font-size: 80%;
     color: #999;
 }
 
-@media only screen and (min-width: 480px) {
-    /* Style adjustments for viewports 480px and over go here */
-    nav li { display: inline; list-style-type: none; text-align: left; width: auto; }
+ul.related { margin: 0 0 8px 0; padding: 0; }
+ul.related li { display: inline; }
+ul.related li.right { float: right; }
 
-    ul.related { margin: 0 0 8px 0; padding: 0; }
-    ul.related li { display: inline; }
-    ul.related li.right { float: right; }
+/* handhelds */
+@media only screen and (max-width: 480px) {
+    body { padding:5px; }
+    img { padding: 0px; }
+    // nav li { display: inline; list-style-type: none; text-align: left; width: auto; }
 }
 
-@media only screen and (min-width: 768px) {
-    /* Style adjustments for viewports 768px and over go here */
-    li.quicklink { display: inline; float: right; }
+/* tablets/smaller screens */
+@media only screen and (max-width: 1200px) {
+    // li.quicklink { display: inline; float: right; }
+    body { padding: 10px; }
+    img { padding: 0px; }
 }
-
-/* Minimal theme has narrower sidebar */
-@media only screen and (min-width: 1200px) {
-    article { float: left; width: 820px; }
-
-    aside { display: block; float: left; }
-}
-
