@@ -11,4 +11,4 @@ if docker inspect psftw-blog &> /dev/null; then
 fi
 docker run -it --name psftw-blog \
 	-u $(id -u) -v $(pwd):/usr/src/app \
-	psftw/psftw-blog
+	psftw/psftw-blog "$@"

@@ -6,4 +6,5 @@ RUN tinker -b && mkdir -p /srv/www && mv blog/html /srv/www/psftw.com
 
 VOLUME /srv/www/psftw.com
 
-CMD ["/usr/local/bin/tinker", "-b"]
+ENTRYPOINT ["/usr/local/bin/tinker"]
+CMD ["-b"]
