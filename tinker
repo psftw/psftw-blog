@@ -1,4 +1,14 @@
 #!/bin/bash
 
-docker run -it -u $(id -u) -v $(pwd):/blog psftw/tinkerer $@
+set -x
 
+if ! docker inspect psftw/psftw-blog &> /dev/null; then
+	docker build -t psftw/psftw-blog .
+fi
+
+if docker inspect psftw-blog &> /dev/null; then
+	docker rm -v psftw-blog
+fi
+docker run -it --name psftw-blog \
+	-u $(id -u) -v $(pwd):/usr/src/app \
+	psftw/psftw-blog

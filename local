@@ -1,3 +1,0 @@
-#!/bin/bash
-
-docker run -it -u $(id -u) -v $(pwd):/blog psftw/tinkerer && rsync -r --delete blog/html/ /var/www/psftw/

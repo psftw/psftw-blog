@@ -1,0 +1,17 @@
+#!/bin/bash
+
+set -x
+
+./tinker
+
+
+if docker inspect psftw-blog-nginx &> /dev/null; then
+	docker kill psftw-blog-nginx && docker start psftw-blog-nginx
+else
+	if ! docker inspect psftw/psftw-blog-nginx &> /dev/null; then
+		docker build -t psftw/psftw-blog-nginx nginx
+	fi
+	docker run -d --name psftw-blog-nginx \
+		--volumes-from psftw-blog -p 8080:80 \
+		psftw/psftw-blog-nginx
+fi

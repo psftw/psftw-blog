@@ -1,5 +1,4 @@
 *.pyc
 
-drafts/
-blog/
-env/
+/drafts/
+/blog/
