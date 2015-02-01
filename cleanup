@@ -2,8 +2,6 @@
 
 set -x
 
-# remove all traces
-
 if docker inspect psftw-blog-nginx &> /dev/null; then
 	docker kill psftw-blog-nginx && docker rm -v psftw-blog-nginx
 fi

@@ -4,6 +4,7 @@ Sitemap
 .. toctree::
    :maxdepth: 1
 
+   2015/01/31/docker_aware_dns_and_transparent_apt_caching
    2014/07/14/paragon_300
    2013/06/22/paragon_100
    2013/05/25/simplifying_the_workflow

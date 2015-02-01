@@ -1,3 +1,0 @@
-#!/bin/bash
-
-rsync -a --delete blog/html/ tampa:www/pub/

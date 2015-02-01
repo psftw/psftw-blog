@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import tinkerer
-import tinkerer.paths        
+import tinkerer.paths
 
 # **************************************************************
 
@@ -18,7 +18,7 @@ description = ''
 author = 'Peter Salvatore'
 
 # Change this to your copyright string
-copyright = '2013-14 ' + author
+copyright = '2013-15 ' + author
 
 # Change this to your blog root URL (required for RSS feed)
 website = 'https://psftw.com/'
@@ -28,7 +28,7 @@ website = 'https://psftw.com/'
 # **************************************************************
 
 # Add your Disqus shortname to enable comments powered by Disqus
-disqus_shortname = None                                   
+disqus_shortname = None
 
 # Change your favicon (new favicon goes in _static directory)
 html_favicon = None
@@ -60,7 +60,7 @@ templates_path = ['_templates']
 html_static_path = ['_static', tinkerer.paths.static]
 
 # Add other theme paths here
-html_theme_path = ['_themes', tinkerer.paths.themes]                 
+html_theme_path = ['_themes', tinkerer.paths.themes]
 
 # Add file patterns to exclude from build
 exclude_patterns = ["drafts/*", "_templates/*", "env/*", "README.rst"]
@@ -72,7 +72,7 @@ html_sidebars = {
 
 render_sidebar = False
 # **************************************************************
-# Do not modify below lines as the values are required by 
+# Do not modify below lines as the values are required by
 # Tinkerer to play nice with Sphinx
 # **************************************************************
 

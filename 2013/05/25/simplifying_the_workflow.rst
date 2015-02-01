@@ -39,7 +39,7 @@ Create a new VM disk image.
 
     $ qemu-img create -f qcow2 centos64base.img 10G
     Formatting 'centos64base.img', fmt=qcow2 size=10737418240 encryption=off
-    cluster_size=65536 lazy_refcounts=off 
+    cluster_size=65536 lazy_refcounts=off
 
 Create a basic KVM start script.
 
@@ -58,9 +58,9 @@ Setup pubkey authentication as root
 .. code-block:: console
 
     $ scp -P 5022 ~/.ssh/id_rsa.pub root@localhost:~/
-    root@localhost's password: 
+    root@localhost's password:
     $ ssh -p 5022 root@localhost
-    root@localhost's password: 
+    root@localhost's password:
     Last login: Wed May 15 21:26:24 2013 from 10.0.2.2
     # mkdir .ssh
     # cat id_rsa.pub >> .ssh/authorized_keys
@@ -77,7 +77,7 @@ At this point we have a bare bones functional CentOS6.4 VM, so take a snapshot.
 .. code-block:: console
 
     $ qemu-img snapshot -c base centos64base.img
-    $ qemu-img info centos64base.img 
+    $ qemu-img info centos64base.img
     image: /home/peter/120g/images/centos64base.img
     file format: qcow2
     virtual size: 10G (10737418240 bytes)
@@ -151,7 +151,7 @@ Verify we can reach the ``vm-dev`` system with Ansible
 
     $ ansible vm-dev -m ping -u root
     localhost | success >> {
-        "changed": false, 
+        "changed": false,
         "ping": "pong"
     }
 
@@ -231,31 +231,31 @@ Execute the playbook (after turning off the Cowsay "feature")
 
 .. code-block:: console
 
-    $ ansible-playbook vm-dev.yml 
+    $ ansible-playbook vm-dev.yml
 
-    PLAY [vm-dev] ***************************************************************** 
+    PLAY [vm-dev] *****************************************************************
 
-    TASK: [Add EPEL repository] *************************************************** 
+    TASK: [Add EPEL repository] ***************************************************
     ok: [localhost]
 
-    TASK: [Add EPEL GPG KEY] ****************************************************** 
+    TASK: [Add EPEL GPG KEY] ******************************************************
     ok: [localhost]
 
-    TASK: [Install basic tools] *************************************************** 
+    TASK: [Install basic tools] ***************************************************
     ok: [localhost] => (item=vim,dstat)
 
-    TASK: [Add PUIAS repository] ************************************************** 
+    TASK: [Add PUIAS repository] **************************************************
     ok: [localhost]
 
-    TASK: [Add PUIAS GPG KEY] ***************************************************** 
+    TASK: [Add PUIAS GPG KEY] *****************************************************
     ok: [localhost]
 
-    TASK: [Install python27 and friends] ****************************************** 
+    TASK: [Install python27 and friends] ******************************************
     ok: [localhost] =>
     (item=python27,python27-devel,python27-imaging,python27-matplotlib,python27-nose,python27-pygments,python27-tools,graphviz-python27)
 
-    PLAY RECAP ******************************************************************** 
-    localhost                  : ok=6    changed=0    unreachable=0    failed=0   
+    PLAY RECAP ********************************************************************
+    localhost                  : ok=6    changed=0    unreachable=0    failed=0
 
 Since I had already applied this configuration to the system, Ansible didn't
 need to make any changes.
@@ -264,11 +264,11 @@ Verify ``python2.7`` in our VM:
 
 .. code-block:: pycon
 
-    Python 2.7.3 (default, Mar 11 2013, 22:38:13) 
+    Python 2.7.3 (default, Mar 11 2013, 22:38:13)
     [GCC 4.4.7 20120313 (Red Hat 4.4.7-3)] on linux2
     Type "help", "copyright", "credits" or "license" for more information.
     >>> import PIL, matplotlib, nose, pygments, gv
-    >>> 
+    >>>
 
 Redistributing ``rpm``
 --------------------------------------------

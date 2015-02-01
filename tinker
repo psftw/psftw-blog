@@ -2,13 +2,10 @@
 
 set -x
 
-if ! docker inspect psftw/psftw-blog &> /dev/null; then
-	docker build -t psftw/psftw-blog .
-fi
+docker build -t psftw/psftw-blog .
 
 if docker inspect psftw-blog &> /dev/null; then
 	docker rm -v psftw-blog
 fi
-docker run -it --name psftw-blog \
-	-u $(id -u) -v $(pwd):/usr/src/app \
-	psftw/psftw-blog "$@"
+
+docker run --name psftw-blog psftw/psftw-blog
