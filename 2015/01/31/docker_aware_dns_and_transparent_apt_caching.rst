@@ -48,7 +48,8 @@ that it can resolve itself.
 .. code-block:: console
 
     $ docker run -d --restart=always --name rawdns \
-          -p 53:53/udp -v /var/run/docker.sock:/var/run/docker.sock \
+          -p 53:53/udp -p 53:53/tcp \
+          -v /var/run/docker.sock:/var/run/docker.sock \
           -v $(pwd)/rawdns.json:/etc/rawdns.json:ro \
           tianon/rawdns rawdns /etc/rawdns.json
     7f535b1322aacebd1d66cadafe71480140a7e9e2676b49a4b44cff51e4305f70
