@@ -3,15 +3,14 @@
 set -x
 
 if docker inspect psftw-blog-nginx &> /dev/null; then
-	docker kill psftw-blog-nginx && docker rm -v psftw-blog-nginx
+	docker kill psftw-blog-nginx
+	docker rm -v psftw-blog-nginx
 fi
 
 docker inspect psftw-blog &> /dev/null && docker rm -v psftw-blog
 
-if docker inspect psftw/psftw-blog-nginx &> /dev/null; then
-	docker rmi -f psftw/psftw-blog-nginx
-fi
+docker inspect psftw/psftw-blog-nginx &> /dev/null \
+	&& docker rmi -f psftw/psftw-blog-nginx
 
-if docker inspect psftw/psftw-blog &> /dev/null; then
-	docker rmi -f psftw/psftw-blog
-fi
+docker inspect psftw/psftw-blog &> /dev/null \
+	&& docker rmi -f psftw/psftw-blog
