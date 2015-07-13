@@ -12,6 +12,13 @@ your builds.
 
 .. more::
 
+**UPDATE 2015-07-12:** This trick no longer works, and I'm not interested in
+tracking down how to fix it.  The failure is likely due to the default ``http.debian.net`` repository in
+``sources.list`` being updated to ``httpredir.debian.net`` which redirects
+requests to a mirror.
+
+-----
+
 The secret sauce is `github.com/tianon/rawdns <https://github.com/tianon/rawdns>`_.
 Go read that first!
 
