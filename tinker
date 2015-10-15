@@ -4,8 +4,6 @@ set -x
 
 docker build -t psftw/psftw-blog .
 
-if docker inspect psftw-blog &> /dev/null; then
-	docker rm -v psftw-blog
-fi
-
-docker run --name psftw-blog psftw/psftw-blog
+docker run -it --rm \
+	-v $(pwd):/usr/src/app \
+	psftw/psftw-blog

@@ -3,20 +3,18 @@ Exploring Jython 2.7.beta1
 
 .. categories:: python
 
-Jython 2.7beta1 was released Feb 10, 2013.  I decided to check it out and was
-impressed.
+Jython is an implementation of Python on the JVM. It offers Python developers
+access to the Java ecosystem at the cost of C extensions and some convenience.
+See `jython.org <http://jython.org>`_ for more details.
 
-.. more::
-
-Jython is an implementation of Python on the JVM.  It offers Python
-developers access to the Java ecosystem at the cost of C extensions and some
-convenience.  See `jython.org <http://jython.org>`_ for more details.
+   **NOTE** Jython 2.7.0 final was released in May 2015, two years after this
+   post, which is left as-is for historical reasons.
 
 Despite being largely successful with Jython 2.5.2 in the past, I did have to
 monkey patch some "pure" Python libraries to get them to work.  Most of the
 problems stemmed from code that took advantage of newer syntax.  Others were
 trickier to resolve (file descriptor leaks), and a few were not worth the
-trouble.  Needless to say, the release announcement looked promising:
+trouble.  Needless to say, the 2.7 beta release announcement looked promising:
 
    Jython 2.7b1 brings us up to language level compatibility with the 2.7
    version of CPython. We have focused largely on CPython compatibility, and so

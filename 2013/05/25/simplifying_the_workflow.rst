@@ -8,8 +8,6 @@ ideas to my software development workflow.  With the help of virtualization and
 Ansible, I was able to create a basic CentOS6 and Python2.7 configuration
 management template.
 
-.. more::
-
 Goals
 ------------
 

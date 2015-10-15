@@ -10,12 +10,8 @@ packages repeatedly is unavoidable. With some DNS trickery and an APT proxy
 cache, you can eliminate most of these redundant downloads and greatly speed up
 your builds.
 
-.. more::
-
-**UPDATE 2015-07-12:** This trick no longer works, and I'm not interested in
-tracking down how to fix it.  The failure is likely due to the default ``http.debian.net`` repository in
-``sources.list`` being updated to ``httpredir.debian.net`` which redirects
-requests to a mirror.
+   **UPDATE 2015-07-12:** This trick no longer works, and I'm not interested in
+   tracking down a solution as I've migrated to a new DNS setup.
 
 -----
 
