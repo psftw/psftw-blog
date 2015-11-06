@@ -15,12 +15,11 @@
     <div class="archive">
         {%- for year in years|sort(reverse=True) -%}
         <div class="year">
-            <h1>{{ year }}</h1>
             <ul>
                 {%- for metadata in years[year] -%}
                 <li>
-                    <span>{{ metadata.formatted_date_short }}</span>
                     <a href="{{ pathto(metadata.link) }}">{{ metadata.title }}</a>
+                    <span style="float:right">{{ metadata.formatted_date }}</span>
                     {%- if metadata.filing["tags"] -%}
                         <span>
                         tags:
