@@ -7,4 +7,4 @@ docker build -t psftw/psftw-blog .
 docker run -it --rm \
 	-v $HOME/.aws/credentials:/root/.aws/credentials \
 	-v $HOME/.aws/config:/root/.aws/config \
-	psftw/psftw-blog python -i push.py
+	psftw/psftw-blog python push.py
