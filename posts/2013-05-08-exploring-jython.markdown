@@ -1,0 +1,58 @@
+---
+title: Exploring Jython 2.7.beta1
+---
+
+Jython is an implementation of Python on the JVM. It offers Python developers
+access to the Java ecosystem at the cost of C extensions and some
+convenience. See [jython.org](https://www.jython.org) for more details and up
+to date information.
+
+> **NOTE:** Jython 2.7.0 final was released in May 2015, two years after this
+post, which is left as-is for historical reasons.
+
+Despite being largely successful with Jython 2.5.2 in the past, I did have to
+monkey patch some "pure" Python libraries to get them to work.  Most of the
+problems stemmed from code that took advantage of newer syntax.  Others were
+trickier to resolve (file descriptor leaks), and a few were not worth the
+trouble.  Needless to say, the 2.7 beta release announcement looked promising:
+
+> Jython 2.7b1 brings us up to language level compatibility with the 2.7
+version of CPython. We have focused largely on CPython compatibility, and so
+this release of Jython can run more pure Python apps then any previous
+release.
+
+In my limited experience, I can confirm these claims.  The Java library support
+has always worked well, and now the pure Python support has received a huge
+boost. *Thank you Jython dev team!*
+
+## Try it out yourself
+
+Install Jython using the "Traditional Installer"
+
+    $ java -jar jython-installer-2.7-b1.jar -s -d env
+
+Bootstrap setuptools
+
+    $ env/bin/jython ez_setup.py 
+
+Install a pure Python library
+
+    $ env/bin/easy_install mako
+
+Install a Java library (such as jyson) by dropping the jar in to
+``env/javalib``.  I also needed to update ``env/bin/jython`` to fix the
+classpath generation script:
+
+    - CP=$JYTHON_HOME/jython-dev.jar
+    + CP=$JYTHON_HOME/jython.jar
+
+Verify both libraries are importable
+
+    Jython 2.7b1 (default:ac42d59644e9, Feb 9 2013, 15:24:52) 
+    [OpenJDK 64-Bit Server VM (Oracle Corporation)] on java1.7.0_21
+    Type "help", "copyright", "credits" or "license" for more information.
+    >>> import mako
+    >>> import com.xhaus.jyson.JysonCodec as json
+
+Thats it!  You just mixed python and Java code.
+

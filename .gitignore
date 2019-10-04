@@ -1,5 +1,3 @@
-*.pyc
-
-/.ropeproject/
-/drafts/
-/blog/
+/.stack-work/
+/_cache/
+/_site/
