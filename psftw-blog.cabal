@@ -1,11 +1,14 @@
+cabal-version:      3.4
 name:               psftw-blog
-version:            0.1.0.0
+version:            0.2.0.0
 build-type:         Simple
-cabal-version:      >= 1.10
+common warnings
+    ghc-options: -Wall
 
-executable site
-  main-is:          site.hs
-  build-depends:    base == 4.*
-                  , hakyll == 4.12.*
-  ghc-options:      -threaded
-  default-language: Haskell2010
+executable psftw-blog
+    import:           warnings
+    main-is:          site.hs
+    build-depends:    base >= 4.17
+                    , hakyll >= 4.12
+    hs-source-dirs:   .
+    default-language: GHC2021
