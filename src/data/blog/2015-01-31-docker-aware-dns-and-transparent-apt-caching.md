@@ -1,9 +1,12 @@
 ---
+layout: "../../layouts/LayoutMd.astro"
 title: "Docker-aware DNS and Transparent APT Caching"
+pubDate: 2015-01-31
+tags: ["tech", "docker"]
 ---
 
 As part of collaborating on [Official Repositories](http://docs.docker.com/docker-hub/official_repos/),
-I wind up building a lot of Debian/Ubuntu-based Docker images.  The ``docker build`` cache is useful, though there are still situations in which downloading APT packages repeatedly is unavoidable. With some DNS trickery and an APT proxy
+I wind up building a lot of Debian/Ubuntu-based Docker images.  The `docker build` cache is useful, though there are still situations in which downloading APT packages repeatedly is unavoidable. With some DNS trickery and an APT proxy
 cache, you can eliminate most of these redundant downloads and greatly speed up
 your builds.
 

@@ -1,5 +1,8 @@
 ---
+layout: "../../layouts/LayoutMd.astro"
 title: Exploring Jython 2.7.beta1
+pubDate: 2013-05-08
+tags: ["jython", "code"]
 ---
 
 Jython is an implementation of Python on the JVM. It offers Python developers

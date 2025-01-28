@@ -1,5 +1,8 @@
 ---
+layout: "../../layouts/LayoutMd.astro"
 title: Simplifying the Workflow
+pubDate: 2013-05-25
+tags: ["tech"]
 ---
 
 Recently I've applied some [DevOps](https://en.wikipedia.org/wiki/DevOps)
@@ -56,7 +59,7 @@ some of these goals so far.
 
 #### Install CentOS6.4
 
-![ ](/images/centos6welcome.jpg "CentOS 6 Welcome Screen")
+![ ](/centos6welcome.jpg "CentOS 6 Welcome Screen")
 
 #### Setup networking
 

@@ -1,6 +1,15 @@
-![](/images/upsidedownkitty.jpg "kitty")
+---
+layout: '../layouts/LayoutMd.astro'
+title: 'psftw.com: About'
+---
 
-> *The possible has been tried and failed. Now it's time to try the impossible. ― Sun Ra*
+![](/upsidedownkitty.jpg "kitty")
+
+> *The possible has been tried and failed.*
+>
+> *Now it's time to try the impossible.*
+>
+> ― Sun Ra
 
 ---
 
