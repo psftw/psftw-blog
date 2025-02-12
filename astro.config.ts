@@ -2,6 +2,7 @@
 import { defineConfig, passthroughImageService } from 'astro/config';
 
 import tailwindcss from '@tailwindcss/vite';
+import mdx from '@astrojs/mdx';
 
 // https://astro.build/config
 export default defineConfig({
@@ -18,4 +19,14 @@ export default defineConfig({
   devToolbar: {
     enabled: false,
   },
+
+  integrations: [mdx()],
+
+  markdown: {
+    shikiConfig: {
+      themes: {
+        light: 'slack-dark',
+      }
+    }
+  }
 });

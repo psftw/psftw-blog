@@ -1,7 +1,8 @@
 ---
-import "../styles/global.css";
+import '../styles/global.css';
 
 import type { MarkdownLayoutProps } from 'astro';
+import Layout from './Layout.astro';
 
 type Props = MarkdownLayoutProps<{
   title: string;
@@ -9,32 +10,6 @@ type Props = MarkdownLayoutProps<{
 
 const { frontmatter } = Astro.props;
 ---
-<!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-    <title>{frontmatter.title}</title>
-	</head>
-	<body class="mx-auto max-w-3xl bg-gray-100 text-gray-900 font-sans">
-    <header class="bg-white shadow-md px-4 py-8">
-      <div class="logo float-left">
-        <a href="/"><i>psftw.com</i></a>
-      </div>
-      <nav class="chunky float-right flux space-x-4">
-        <a href="/about">About</a>
-        <a href="/archive">Archive</a>
-      </nav>
-    </header>
-    <main class="prose px-4 py-6 mx-auto max-w-4xl
-      prose-xl
-      prose-h1:text-4xl
-      prose-h2:text-3xl
-      prose-h3:text-2xl
-      prose-h4:text-1xl
-      prose-hr:px-20">
-      <slot />
-    </main>
-    <footer class="m-6 float-right text-xs">© 2013-25 Peter Salvatore</footer>
-	</body>
-</html>
+<Layout title={frontmatter.title}>
+  <slot />
+</Layout>

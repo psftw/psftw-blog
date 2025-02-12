@@ -1,0 +1,19 @@
+---
+layout: '../layouts/LayoutMd.astro'
+title: "psftw.com: Archive"
+---
+import { Image } from 'astro:assets';
+import { getCollection } from "astro:content";
+
+export const posts = await getCollection('blog');
+
+![](/kittybookshelf.jpg "A cat in front of a bookshelf.")
+
+### Archive
+
+<ul>
+{posts.sort((a, b) => b.data.pubDate - a.data.pubDate)
+      .map(post => (
+<li>{post.data.pubDate.toISOString().split('T')[0]} <a href={`/blog/${post.id}`}>{post.data.title}</a></li>
+))}
+</ul>
