@@ -1,7 +1,9 @@
 ---
-layout: '../layouts/LayoutMd.astro'
 title: 'psftw.com: Kitchen Sink'
 ---
+import Layout from '../layouts/Layout.astro';
+
+<Layout title={frontmatter.title}>
 
 # Kitchen Sink!
 
@@ -23,10 +25,19 @@ And of course ~~strike-through~~
 
 And links to [google.com](httpns;//www.google.com)
 
-Headings 5 and 6 are not useful!
+##### Heading 5...
+
+How many levels...
+
+###### Heading 6 `.......`
+
+Have a line\
+break...
+
 Have a horizontal rule!
 
-----------
+***
+
 
 ## Lists
 
@@ -75,3 +86,4 @@ no language specified
 | Item1.2 | Item2.2 | Item3.2 | Item4.2 |
 | Item1.3 | Item2.3 | Item3.3 | Item4.3 |
 
+</Layout>

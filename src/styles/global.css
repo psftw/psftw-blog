@@ -1,16 +1,86 @@
 @import 'tailwindcss';
-@plugin '@tailwindcss/typography';
 
-@font-face {
-    font-family: 'chunkfive';
-    src: url('/cf-webfont.woff2') format('woff2');
-    font-weight: normal;
-    font-style: normal;
+@theme {
+  --font-fsregular: "fs_regular", sans-serif;
+  --font-fsitalic: "fs_italic", sans-serif;
+  --font-fsbold: "fs_bold", sans-serif;
+  --font-fsbolditalic: "fs_bolditalic", sans-serif;
+  --font-fsmedium: "fs_medium", sans-serif;
+  --font-fsmediumitalic: "fs_mediumitalic", sans-serif;
 }
 
+@layer base {
+  @font-face {
+    font-family: 'fs_regular';
+    src: url('/firasans-regular-webfont.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'fs_italic';
+    src: url('/firasans-italic-webfont.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'fs_bold';
+    src: url('/firasans-bold-webfont.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'fs_bolditalic';
+    src: url('/firasans-bolditalic-webfont.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'fs_medium';
+    src: url('/firasans-medium-webfont.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'fs_mediumitalic';
+    src: url('/firasans-mediumitalic-webfont.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+  }
+}
+
+@custom-variant dark (&:where(.dark, .dark *));
+
 @layer components {
-  .chunky {
-    font-family: 'chunkfive', system-ui, sans-serif;
+  main.dark { @apply bg-slate-800; }
+  main {
+    a { @apply font-fsmedium underline
+      hover:text-amber-600
+      visited:text-fuchsia-600
+      decoration-sky-500
+      text-blue-600
+      dark:text-blue-400; }
+    blockquote { @apply bg-slate-200 m-4; }
+    blockquote p { @apply text-base p-2 text-slate-700 dark:text-red-400 font-fsmediumitalic; }
+    pre.astro-code { @apply my-4 p-2 text-sm border; }
+    code { @apply font-semibold; }
+    hr { @apply my-4; }
+    h1 { @apply text-4xl mt-4 mb-2 font-fsbold; }
+    h2 { @apply text-3xl mt-4 mb-2 font-fsmedium; }
+    h3 { @apply text-2xl mt-3 mb-2 font-fsmedium; }
+    h4 { @apply text-xl mt-3 mb-2 font-fsmedium; }
+    h5 { @apply text-lg my-2 font-fsmedium; }
+    h6 { @apply text-lg my-2 font-fsmediumitalic; }
+    p { @apply font-fsregular; }
+    ul { @apply list-disc ml-3 my-4; }
+    ol { @apply list-decimal ml-3 my-4; }
+    table { @apply table-auto m-auto; }
+    table thead { @apply bg-slate-200; }
+    table th, table td { @apply p-1; }
   }
 }
 
